@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Net;
 using System.Web;
+using System.Text.Json;
 using Mnk.Library.Common.Log;
 using Mnk.Library.Common.Network;
-using ServiceStack.Text;
 
 namespace Mnk.Library.CodePlex
 {
@@ -25,29 +25,22 @@ namespace Mnk.Library.CodePlex
             var url = string.Format(serverUrl + "/send/{0}", HttpUtility.UrlPathEncode(application + " " + title));
             var result = request.GetResult(url,
                               HttpMethod.POST,
-                              JsonSerializer.SerializeToString(TrimBody(body)),
+                              JsonSerializer.Serialize(TrimBody(body)),
                               new[]
-								  {
-									  new Header("Content-Type", "application/json; charset=utf-8"),
-									  new Header("Accept-Encoding", "gzip,deflate")
-								  }
+                                  {
+                                      new Header("Content-Type", "application/json; charset=utf-8"),
+                                      new Header("Accept-Encoding", "gzip,deflate")
+                                  }
                               );
-            if (result.HttpStatusCode != HttpStatusCode.OK)
-            {
-                log.Write("Can't send feedback, status code: " + result.HttpStatusCode);
-                return false;
-            }
-            return true;
+            if (result.HttpStatusCode == HttpStatusCode.OK) return true;
+            log.Write("Can't send feedback, status code: " + result.HttpStatusCode);
+            return false;
         }
 
         private static string TrimBody(string body)
         {
-            const int max = UInt16.MaxValue-3;
-            if (body.Length > max)
-            {
-                return body.Substring(body.Length - max);
-            }
-            return body;
+            const int max = UInt16.MaxValue - 3;
+            return body.Length > max ? body.Substring(body.Length - max) : body;
         }
     }
 }

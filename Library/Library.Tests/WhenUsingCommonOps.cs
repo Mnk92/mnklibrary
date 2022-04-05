@@ -44,6 +44,5 @@ namespace Mnk.Library.Tests
         {
             Assert.AreEqual(expected, CommonEncoders.Minimize(value));
         }
-
     }
 }

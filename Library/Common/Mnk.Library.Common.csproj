@@ -42,18 +42,19 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ServiceStack.Text">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\ServiceStack.Text.3.9.71\lib\net35\ServiceStack.Text.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="System">
     </Reference>
     <Reference Include="System.Core">
     </Reference>
+    <Reference Include="System.Memory">
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Text.Json">
+      <Private>False</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoUpdate\IUpdater.cs" />
@@ -131,9 +132,6 @@
     <Compile Include="UI\Model\ICheckableData.cs" />
     <Compile Include="UI\Model\IData.cs" />
     <Compile Include="UI\Model\PairData.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

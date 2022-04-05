@@ -57,7 +57,7 @@
     <Compile Include="Icons\IconsExtensions.cs" />
     <Compile Include="Icons\IconsExtractor.cs" />
     <Compile Include="Icons\IconWithText.cs" />
-    <Compile Include="MenuExtenstions.cs" />
+    <Compile Include="MenuExtensions.cs" />
     <Compile Include="NativeMethods.cs" />
     <Compile Include="Icons\TipIcon.cs" />
     <Compile Include="Icons\TrayIcon.cs" />
