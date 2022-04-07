@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Mnk.Library.Common</id>
+    <authors>Mnk92</authors>
+    <version>2.0.0</version>
+    <license type="expression">GPL-3.0-only</license>
+    <projectUrl>https://github.com/Mnk92/mnklibrary</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Common library for Mnk92 projects</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2022</copyright>
+    <tags>WPF System</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.8" />
+    </dependencies>
+  </metadata>
+</package>

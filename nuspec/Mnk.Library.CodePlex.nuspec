@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Mnk.Library.CodePlex</id>
+    <authors>Mnk92</authors>
+    <version>2.0.0</version>
+    <license type="expression">GPL-3.0-only</license>
+    <projectUrl>https://github.com/Mnk92/mnklibrary</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Auto update library for codeplex.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright 2022</copyright>
+    <tags>WPF CodePlex Autoupdate</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.8" />
+      <group>
+        <dependency id="Mnk.Library.Common"/>
+        <dependency id="Mnk.Library.WPFControls"/>
+      </group>
+    </dependencies>
+  </metadata>
+</package>
