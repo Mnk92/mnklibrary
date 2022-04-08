@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <OutputPath>..\bin\$(Configuration)\</OutputPath>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Description>Common WPF controls for syntax highlights.</Description>
+    <PackageProjectUrl>https://github.com/Mnk92/mnklibrary</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Mnk92/mnklibrary.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>WPF Syntax Highlight</PackageTags>
+    <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+    <FileVersion>$(VersionPrefix)</FileVersion>
+    <SignAssembly>False</SignAssembly>
+    <Version>$(VersionPrefix)</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AvalonEdit" Version="6.1.3.50" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LibsLocalization\Mnk.Library.Localization.csproj" />
+    <ProjectReference Include="..\WpfControls\Mnk.Library.WpfControls.csproj" />
+  </ItemGroup>
+</Project>

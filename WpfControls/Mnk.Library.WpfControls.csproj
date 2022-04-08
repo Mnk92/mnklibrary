@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <OutputPath>..\bin\$(Configuration)\</OutputPath>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
+    <FileVersion>$(VersionPrefix)</FileVersion>
+    <Description>Common WPF controls.</Description>
+    <RepositoryUrl>https://github.com/Mnk92/mnklibrary.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>scripting engine</PackageTags>
+    <PackageProjectUrl>https://github.com/Mnk92/mnklibrary</PackageProjectUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Mnk.Library.Common.csproj" />
+    <ProjectReference Include="..\LibsLocalization\Mnk.Library.Localization.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
+  </ItemGroup>
+</Project>

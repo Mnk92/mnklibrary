@@ -5,5 +5,3 @@
 *.opensdf
 bin
 obj
-/Libs/
-/nuget/

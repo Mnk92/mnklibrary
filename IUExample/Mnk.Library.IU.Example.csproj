@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputPath>..\bin\$(Configuration)\</OutputPath>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IUExample</RootNamespace>
+    <AssemblyName>IUExample</AssemblyName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Mnk.Library.Common.csproj" />
+    <ProjectReference Include="..\LibsLocalization\Mnk.Library.Localization.csproj" />
+    <ProjectReference Include="..\WpfControls\Mnk.Library.WpfControls.csproj" />
+    <ProjectReference Include="..\WpfSyntaxHighlighter\Mnk.Library.WpfSyntaxHighlighter.csproj" />
+  </ItemGroup>
+</Project>
