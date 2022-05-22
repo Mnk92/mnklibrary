@@ -19,10 +19,10 @@
     <Version>$(VersionPrefix)</Version>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="CodePlex\CodePlexLang.Designer.cs">
+    <Compile Update="AutoUpdateAndFeedback\AutoUpdateAndFeedbackLang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CodePlexLang.resx</DependentUpon>
+      <DependentUpon>AutoUpdateAndFeedbackLang.resx</DependentUpon>
     </Compile>
     <Compile Update="WpfControls\WpfControlsLang.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -36,9 +36,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Update="CodePlex\CodePlexLang.resx">
+    <EmbeddedResource Update="AutoUpdateAndFeedback\AutoUpdateAndFeedbackLang.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>CodePlexLang.Designer.cs</LastGenOutput>
+      <LastGenOutput>AutoUpdateAndFeedbackLang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="WPFControls\WPFControlsLang.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

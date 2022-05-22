@@ -1,11 +1,10 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using Mnk.Library.Common.Log;
 using Mnk.Library.Common.Network;
 
-namespace Mnk.Library.CodePlex
+namespace Mnk.Library.AutoUpdateAndFeedback
 {
     public class FeedbackSender : IFeedbackSender
     {

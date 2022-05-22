@@ -18,3 +18,5 @@ jobs:
       run: dotnet build -c Release --no-restore
     - name: Run tests
       run: dotnet test -c Release --no-restore --no-build
+    - name: Create nuget packages
+      run: dotnet pack -c Release

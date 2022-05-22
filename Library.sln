@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mnk.Library.WpfSyntaxHighli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mnk.Library.Tests", "Library.Tests\Mnk.Library.Tests.csproj", "{CCA6200F-9B7D-4115-B375-AA493F5EF5C7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mnk.Library.CodePlex", "CodePlex\Mnk.Library.CodePlex.csproj", "{E100F6D7-ECC7-4046-8EE6-862F3EB9D94A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mnk.Library.AutoUpdateAndFeedback", "AutoUpdateAndFeedback\Mnk.Library.AutoUpdateAndFeedback.csproj", "{E100F6D7-ECC7-4046-8EE6-862F3EB9D94A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{B947B219-FD8A-46F1-A754-7D8E4805B838}"
 EndProject

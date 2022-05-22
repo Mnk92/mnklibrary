@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
 [assembly: SupportedOSPlatform("windows7.0")]
-[assembly: AssemblyTitle("Mnk.Library.CodePlex")]
+[assembly: AssemblyTitle("Mnk.Library.GitHub")]
 [assembly: AssemblyCompany("Mnk")]
 [assembly: AssemblyProduct("MnkLibrary")]
 [assembly: ComVisible(false)]

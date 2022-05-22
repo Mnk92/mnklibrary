@@ -1,10 +1,9 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Windows;
 using Mnk.Library.Common.Log;
-using Mnk.Library.Localization.CodePlex;
+using Mnk.Library.Localization.AutoUpdateAndFeedback;
 
-namespace Mnk.Library.CodePlex
+namespace Mnk.Library.AutoUpdateAndFeedback
 {
     public class LogsSender : ILogsSender
     {
@@ -21,7 +20,7 @@ namespace Mnk.Library.CodePlex
         public void SendIfNeed()
         {
             if (!File.Exists(sourceFile)) return;
-            if (MessageBox.Show(CodePlexLang.AreYouWantSendLogsToTheAuthor, null, MessageBoxButton.YesNo,
+            if (MessageBox.Show(AutoUpdateAndFeedbackLang.AreYouWantSendLogsToTheAuthor, null, MessageBoxButton.YesNo,
                 MessageBoxImage.Question) != MessageBoxResult.Yes) return;
             try
             {

@@ -1,9 +1,9 @@
 ﻿using System.IO;
 using System.Windows;
 using Mnk.Library.Common.Tools;
-using Mnk.Library.Localization.CodePlex;
+using Mnk.Library.Localization.AutoUpdateAndFeedback;
 
-namespace Mnk.Library.CodePlex.Controls
+namespace Mnk.Library.AutoUpdateAndFeedback.Controls
 {
     /// <summary>
     /// Interaction logic for ChangesLogDialog.xaml
@@ -13,15 +13,15 @@ namespace Mnk.Library.CodePlex.Controls
         public ChangesLogDialog()
         {
             InitializeComponent();
-            Title = CodePlexLang.ChangeLogTitle;
+            Title = AutoUpdateAndFeedbackLang.ChangeLogTitle;
         }
 
-        public long ShowChangeLog(long lastChanglogPosition)
+        public long ShowChangeLog(long lastChangelogPosition)
         {
             var file = new FileInfo("changelog.txt");
             if (!file.Exists) return 0;
-            if (file.Length <= lastChanglogPosition + 10) return lastChanglogPosition;
-            Message.Text = file.ReadBegin((int)(file.Length - lastChanglogPosition));
+            if (file.Length <= lastChangelogPosition + 10) return lastChangelogPosition;
+            Message.Text = file.ReadBegin((int)(file.Length - lastChangelogPosition));
             ShowAndActivate();
             return file.Length;
         }

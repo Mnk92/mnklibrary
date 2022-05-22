@@ -1,27 +1,25 @@
-﻿using System;
-using System.Diagnostics;
-using System.Net;
+﻿using System.Diagnostics;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Windows;
 using Mnk.Library.Common.AutoUpdate;
 using Mnk.Library.Common.Log;
-using Mnk.Library.Localization.CodePlex;
+using Mnk.Library.Localization.AutoUpdateAndFeedback;
 
-namespace Mnk.Library.CodePlex
+namespace Mnk.Library.AutoUpdateAndFeedback
 {
-    public class CodePlexApplicationUpdater : IApplicationUpdater
+    public class ApplicationUpdater : IApplicationUpdater
     {
         private readonly string appUrl = "https://{0}.codeplex.com";
-        private static readonly ILog Log = LogManager.GetLogger<CodePlexApplicationUpdater>();
+        private static readonly ILog Log = LogManager.GetLogger<ApplicationUpdater>();
         private string downloadLink;
         private string version;
-        private readonly string codeplexName;
+        private readonly string applicationName;
 
-        public CodePlexApplicationUpdater(string codeplexName)
+        public ApplicationUpdater(string applicationName)
         {
-            this.codeplexName = codeplexName;
-            appUrl = string.Format(appUrl, codeplexName);
+            this.applicationName = applicationName;
+            appUrl = string.Format(appUrl, applicationName);
         }
 
         public bool? NeedUpdate()
@@ -34,8 +32,8 @@ namespace Mnk.Library.CodePlex
                 if (newVersion > currentVersion)
                 {
                     var result = MessageBox.Show(
-                        string.Format(CodePlexLang.FoundNewVersionTemplate, newVersion, currentVersion),
-                        CodePlexLang.NewVersionAvailable,
+                        string.Format(AutoUpdateAndFeedbackLang.FoundNewVersionTemplate, newVersion, currentVersion),
+                        AutoUpdateAndFeedbackLang.NewVersionAvailable,
                         MessageBoxButton.YesNo,
                         MessageBoxImage.Question,
                         MessageBoxResult.Yes,
@@ -71,7 +69,7 @@ namespace Mnk.Library.CodePlex
             using var cl = new HttpClient();
             var response = await cl.GetAsync(appUrl + "/releases/");
             var str = await response.Content.ReadAsStringAsync();
-            version = new Regex(codeplexName + @" (?<version>\d{1,}.\d{1,})", RegexOptions.IgnoreCase).Match(str).Groups["version"].Value;
+            version = new Regex(applicationName + @" (?<version>\d{1,}.\d{1,})", RegexOptions.IgnoreCase).Match(str).Groups["version"].Value;
             downloadLink = new Regex(@"href=""(?<url>" + appUrl + @"/downloads/get/\d{1,})""", RegexOptions.IgnoreCase).Match(str).Groups["url"].Value;
         }
     }

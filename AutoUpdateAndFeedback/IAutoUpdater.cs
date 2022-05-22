@@ -1,4 +1,4 @@
-﻿namespace Mnk.Library.CodePlex
+﻿namespace Mnk.Library.AutoUpdateAndFeedback
 {
     public interface IAutoUpdater
     {

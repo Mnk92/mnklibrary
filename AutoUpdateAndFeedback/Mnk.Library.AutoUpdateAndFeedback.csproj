@@ -11,10 +11,10 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <AssemblyVersion>$(VersionPrefix)</AssemblyVersion>
     <FileVersion>$(VersionPrefix)</FileVersion>
-    <Description>Auto update library for codeplex.</Description>
+    <Description>Auto update library for github.</Description>
     <RepositoryUrl>https://github.com/Mnk92/mnklibrary.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageTags>codeplex</PackageTags>
+    <PackageTags>github</PackageTags>
     <PackageProjectUrl>https://github.com/Mnk92/mnklibrary</PackageProjectUrl>
   </PropertyGroup>
   <ItemGroup>
