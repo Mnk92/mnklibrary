@@ -1,45 +1,45 @@
-﻿using Mnk.Library.Common;
-using NUnit.Framework;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Mnk.Library.Common;
 
 namespace Mnk.Library.Tests
 {
-    [TestFixture]
-    class CommonOpsTestFixture
+    [TestClass]
+    public class CommonOpsTestFixture
     {
-        [Test]
-        [TestCase("", "")]
-        [TestCase("a", "a")]
-        [TestCase("\r", "\\r")]
-        [TestCase("\r\n", "\\r\\n")]
-        [TestCase("\\", "\\\\")]
-        [TestCase("\\\\", "\\\\\\\\")]
-        [TestCase("\\\r", "\\\\\\r")]
+        [DataTestMethod]
+        [DataRow("", "")]
+        [DataRow("a", "a")]
+        [DataRow("\r", "\\r")]
+        [DataRow("\r\n", "\\r\\n")]
+        [DataRow("\\", "\\\\")]
+        [DataRow("\\\\", "\\\\\\\\")]
+        [DataRow("\\\r", "\\\\\\r")]
         public void Should_encode_string(string value, string expected)
         {
             Assert.AreEqual(expected, CommonEncoders.EncodeString(value));
         }
 
-        [Test]
-        [TestCase("", "")]
-        [TestCase("a", "a")]
-        [TestCase("\\\\", "\\")]
-        [TestCase("\\r\\n", "\r\n")]
-        [TestCase("\\", "\\")]
-        [TestCase("\\\\r", "\\r")]
-        [TestCase("test\\", "test\\")]
-        [TestCase("\"test\\\"", "\"test\"")]
+        [DataTestMethod]
+        [DataRow("", "")]
+        [DataRow("a", "a")]
+        [DataRow("\\\\", "\\")]
+        [DataRow("\\r\\n", "\r\n")]
+        [DataRow("\\", "\\")]
+        [DataRow("\\\\r", "\\r")]
+        [DataRow("test\\", "test\\")]
+        [DataRow("\"test\\\"", "\"test\"")]
         public void Should_decode_string(string value, string expected)
         {
             Assert.AreEqual(expected, CommonEncoders.DecodeString(value));
         }
 
-        [Test]
-        [TestCase("", "")]
-        [TestCase("a", "a")]
-        [TestCase("  ", " ")]
-        [TestCase("\r\n", " ")]
-        [TestCase("\r\n       ", " ")]
-        [TestCase("a\r\nb      c", "a b c")]
+        [DataTestMethod]
+        [DataRow("", "")]
+        [DataRow("a", "a")]
+        [DataRow("  ", " ")]
+        [DataRow("\r\n", " ")]
+        [DataRow("\r\n       ", " ")]
+        [DataRow("a\r\nb      c", "a b c")]
         public void Should_minimize_string(string value, string expected)
         {
             Assert.AreEqual(expected, CommonEncoders.Minimize(value));

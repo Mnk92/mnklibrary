@@ -1,15 +1,12 @@
-﻿using System;
-using System.IO;
-using Mnk.Library.Common;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Mnk.Library.Common.AutoUpdate;
 using Mnk.Library.Common.SaveLoad;
 using Mnk.Library.Common.UI.Model;
-using NUnit.Framework;
 
 namespace Mnk.Library.Tests
 {
-    [TestFixture]
-    class WhenUsingCommonSerializer
+    [TestClass]
+    public class WhenUsingCommonSerializer
     {
         class TestData : PairData
         {
@@ -22,13 +19,13 @@ namespace Mnk.Library.Tests
         }
         private readonly string OutputPath = "test.json";
 
-        [SetUp]
+        [TestInitialize]
         public void SetUp()
         {
             File.Delete(OutputPath);
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSerializeDefaultsTest()
         {
             var expected = new TestData { Key = "1", Value = "2" };
@@ -53,7 +50,7 @@ namespace Mnk.Library.Tests
             public DateTime Time { get; set; }
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSerializeDateTimeTest()
         {
             var expected = new DateTest { Time = new DateTime(1, 1, 1) };
@@ -79,7 +76,7 @@ namespace Mnk.Library.Tests
             }
         }
 
-        [Test]
+        [TestMethod]
         public void ShouldSerializeComplexTypesTest()
         {
             var expected = new UpdateTest { Interval = UpdateInterval.Daily, Last = DateTime.Today };
