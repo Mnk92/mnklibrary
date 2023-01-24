@@ -60,6 +60,7 @@ namespace Mnk.Library.Interprocess
         public void Dispose()
         {
             channel.Dispose();
+            GC.SuppressFinalize(this);
         }
     }
 }

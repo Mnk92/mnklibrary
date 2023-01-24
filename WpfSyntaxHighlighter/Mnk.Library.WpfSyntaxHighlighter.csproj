@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net7.0-windows</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <OutputType>Library</OutputType>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>enable</ImplicitUsings>
@@ -22,7 +23,7 @@
     <Version>$(VersionPrefix)</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AvalonEdit" Version="6.1.3.50" />
+    <PackageReference Include="AvalonEdit" Version="6.2.0.78" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibsLocalization\Mnk.Library.Localization.csproj" />

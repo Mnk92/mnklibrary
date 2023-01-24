@@ -53,6 +53,7 @@ namespace Mnk.Library.Interprocess
             {
                 application.DisposeAsync().AsTask().Wait();
             }
+            GC.SuppressFinalize(this);
         }
     }
 }
