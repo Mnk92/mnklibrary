@@ -23,7 +23,7 @@
     <Version>$(VersionPrefix)</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AvalonEdit" Version="6.2.0.78" />
+    <PackageReference Include="AvalonEdit" Version="6.3.0.90" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LibsLocalization\Mnk.Library.Localization.csproj" />
